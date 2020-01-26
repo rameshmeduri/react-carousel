@@ -26,9 +26,7 @@ const slides = [
   }
 ];
 
-const Prev = ({ onClick }) => (
-  <span className="left-arrow" onClick={onClick} />
-);
+const Prev = ({ onClick }) => <span className="left-arrow" onClick={onClick} />;
 
 const Next = ({ onClick }) => (
   <span className="right-arrow" onClick={onClick} />
@@ -44,7 +42,7 @@ const Carousel = () => {
     swipeToSlide: true,
     arrows: true,
     prevArrow: <Prev />,
-    nextArrow: <Next />    
+    nextArrow: <Next />
   };
 
   return (
@@ -54,12 +52,10 @@ const Carousel = () => {
         <Slider {...settings}>
           {slides.map((slide, index) => {
             return (
-              
-                <Link key={index} to={'/'} className="slide">
-                  <img src={slide.img} data-index={index} alt="" />
-                  <p>Slide {index}</p>
-                </Link>
-              
+              <Link key={index} to={'/'} className="slide">
+                <img src={slide.img} data-index={index} alt="" />
+                <p>Slide {index}</p>
+              </Link>
             );
           })}
         </Slider>
